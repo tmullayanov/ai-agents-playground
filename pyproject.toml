@@ -1,0 +1,25 @@
+[project]
+name = "a2a-mcp-explore"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "gigachat>=0.1.43",
+    "langchain>=1.0,<2.0",
+    "langchain-gigachat==0.3.13a1",
+    "loguru>=0.7.3",
+    "requests>=2.32.5",
+    "structlog>=25.5.0",
+]
+
+[dependency-groups]
+dev = [
+    "langgraph-cli[inmem]>=0.4.12",
+]
+
+
+[tool.basedpyright]
+reportAny = "none"
+reportExplicitAny = "none"
+reportUnknownVariableType = "none"
