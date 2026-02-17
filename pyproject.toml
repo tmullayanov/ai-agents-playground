@@ -17,6 +17,8 @@ dependencies = [
 [dependency-groups]
 dev = [
     "langgraph-cli[inmem]>=0.4.12",
+    "pytest>=9.0.2",
+    "pytest-asyncio>=1.3.0",
 ]
 
 
@@ -24,3 +26,9 @@ dev = [
 reportAny = "none"
 reportExplicitAny = "none"
 reportUnknownVariableType = "none"
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "."
+]
+asyncio_mode = "auto"
