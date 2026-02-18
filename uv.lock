@@ -11,7 +11,9 @@ dependencies = [
     { name = "gigachat" },
     { name = "langchain" },
     { name = "langchain-gigachat" },
+    { name = "langchain-mcp-adapters" },
     { name = "loguru" },
+    { name = "prometheus-client" },
     { name = "requests" },
     { name = "structlog" },
 ]
@@ -29,7 +31,9 @@ requires-dist = [
     { name = "gigachat", specifier = ">=0.1.43" },
     { name = "langchain", specifier = ">=1.0,<2.0" },
     { name = "langchain-gigachat", specifier = "==0.3.13a1" },
+    { name = "langchain-mcp-adapters", specifier = ">=0.2.1" },
     { name = "loguru", specifier = ">=0.7.3" },
+    { name = "prometheus-client", specifier = ">=0.24.1" },
     { name = "requests", specifier = ">=2.32.5" },
     { name = "structlog", specifier = ">=25.5.0" },
 ]
@@ -1157,6 +1161,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/ff/ba/bdc22697155ae9db4c5c77b17f8716dcd43920e78d75e346f78da59151fa/langchain_gigachat-0.3.13a1.tar.gz", hash = "sha256:4c459e776c65e74bbb852e21f22c8637d3983211294d390f4f526e1b72477829", size = 22709, upload-time = "2025-10-31T12:10:29.26Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/3d/26/90dbeea0dad976eeb3b4745313ca59d5c1c6f2eb44bee94c0c5a74a65396/langchain_gigachat-0.3.13a1-py3-none-any.whl", hash = "sha256:d80d85c31bd0768cdcf784d5672d9b10acf96d4b9c7c708ab8be470aef09d602", size = 27383, upload-time = "2025-10-31T12:10:27.886Z" },
+]
+
+[[package]]
+name = "langchain-mcp-adapters"
+version = "0.2.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "langchain-core" },
+    { name = "mcp" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d9/52/cebf0ef5b1acef6cbc63d671171d43af70f12d19f55577909c7afa79fb6e/langchain_mcp_adapters-0.2.1.tar.gz", hash = "sha256:58e64c44e8df29ca7eb3b656cf8c9931ef64386534d7ca261982e3bdc63f3176", size = 36394 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/03/81/b2479eb26861ab36be851026d004b2d391d789b7856e44c272b12828ece0/langchain_mcp_adapters-0.2.1-py3-none-any.whl", hash = "sha256:9f96ad4c64230f6757297fec06fde19d772c99dbdfbca987f7b7cfd51ff77240", size = 22708 },
 ]
 
 [[package]]

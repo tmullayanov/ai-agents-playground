@@ -3,7 +3,8 @@
         "."
     ],
     "graphs": {
-        "simple_agent": "./simple_agent/agent.py:agent"
+        "simple_agent": "./simple_agent/agent.py:agent",
+        "store_sim_agent": "./store_sim_agent/agent.py:app"
     },
     "env": ".env"
 }
