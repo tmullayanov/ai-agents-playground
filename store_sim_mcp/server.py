@@ -1,8 +1,10 @@
 
 import asyncio
 from fastmcp import FastMCP
+from starlette.requests import Request
+from starlette.responses import JSONResponse
 
-from store_sim_mcp.db import CUSTOMERS_TABLE, ORDERS_TABLE, PRODUCTS_TABLE
+from .db import CUSTOMERS_TABLE, ORDERS_TABLE, PRODUCTS_TABLE
 
 
 mcp = FastMCP("ecom")
@@ -65,15 +67,22 @@ async def get_customer_ids_by_name(customer_name: str) -> list[str]:
 @mcp.tool()
 async def get_orders_by_customer_id(
     customer_id: str,
-) -> dict[str, dict[str, str]]:
+) -> dict[str, str]:
     """Get orders by customer ID"""
     await asyncio.sleep(1)
     return {
-        order_id: order
+        order_id: str(order)
         for order_id, order in ORDERS_TABLE.items()
         if order.get("customer_id") == customer_id
     }
 
+
+@mcp.custom_route(
+    path="/health",
+    methods=["GET"],
+)
+async def health_check(_request: Request):
+    return JSONResponse(content={"status": "ok"})
 
 def run(port: int = 8000):
     mcp.run("streamable-http", port=port)
