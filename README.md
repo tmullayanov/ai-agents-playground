@@ -61,6 +61,9 @@ Then, in the LangSmith studio, make sure "simple_agent" is used in the tab you w
 
 This example requires (as of now) to run two separate processes.
 
+
+#### Running MCP Server
+
 The first one is MCP server which emulates an interface over some e-com database.
 The idea is inspired by one of the tutorials online.
 
@@ -73,5 +76,22 @@ To run it, use special entry point:
 
 By default, server works on `http://localhost:8001/mcp`.
 
+Basic connection via FastMCP is shown in the `run_sim_mcp_server.py` notebook.
 
 
+#### Running Agent
+
+The agent is located at `store_sim_agent`
+
+To connect to MCP server, `langchain_mcp_adapter` is used.
+FastMCP is also a viable option but it needs additional code to make mcp tools "callable" in a sense of langchain tools.
+
+To run the agent, use the following command:
+
+```sh
+uv run langgraph dev --config langgraph.json
+```
+
+Make sure that 'store_sim_agent' is picked in the LangSmith UI.
+
+Data for this example is stored at `store_sim_mcp\db.py`, the agent is capable of dealing with questions about those tables.
