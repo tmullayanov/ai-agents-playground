@@ -10,7 +10,6 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 from dotenv import load_dotenv
 from langchain_core.messages import BaseMessage, AIMessage
-from langchain_core.tools import tool
 from langgraph.graph import StateGraph, END, add_messages
 
 load_dotenv(override=True)  # pyright: ignore[reportUnusedCallResult]

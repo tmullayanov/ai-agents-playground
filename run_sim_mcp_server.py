@@ -1,4 +1,4 @@
-from store_sim_mcp import run
+from store_sim.mcp import run
 
 PORT = 8001
 

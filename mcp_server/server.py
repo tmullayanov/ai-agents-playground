@@ -13,7 +13,7 @@ def add(a: int, b: int) -> int:
     methods=["GET"],
     include_in_schema=False
 )
-async def health(request: Request):
+async def health(_: Request):
     return JSONResponse({"status": "ok"})
 
 
